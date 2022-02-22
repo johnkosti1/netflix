@@ -1,22 +1,28 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-::before,
-::after {
-  box-sizing: border-box;
+
+html {
+  height: 100%;
+}
+
+html, body {
   margin: 0;
   padding: 0;
 }
 
 body {
   background-image: url("https://images6.alphacoders.com/696/thumb-1920-696647.jpg");
-  height: 100vh;
+  min-height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 /* ჰედერი */
@@ -25,7 +31,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
   height: 70px;
   padding: 0 3%;
   background: rgb(0, 0, 0);
@@ -36,9 +41,7 @@ body {
   );
 }
 
-.header-container ul li a,
-.header-container ul li a i,
-.header-container ul li i {
+.header-container ul li a {
   color: white;
   font-size: 14px;
 }
@@ -49,24 +52,17 @@ body {
 
 .left-menu {
   display: flex;
-  justify-content: flex-start;
+  flex: 1;
   align-items: center;
 }
 
 .right-menu {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
 
 .main-menu {
   margin-left: 40px;
-}
-
-.menu,
-.left-menu,
-.right-menu {
-  list-style: none;
 }
 
 .profile-img {
