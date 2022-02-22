@@ -1,28 +1,22 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-html {
-  height: 100%;
-}
-
-html, body {
+::before,
+::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
   background-image: url("https://images6.alphacoders.com/696/thumb-1920-696647.jpg");
-  min-height: 100%;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
 }
 
 /* ჰედერი */
@@ -31,17 +25,20 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 30px 10%;
   height: 70px;
   padding: 0 3%;
   background: rgb(0, 0, 0);
   background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.751819396286868) 0%,
-    rgba(0, 0, 0, 0) 100%
+          180deg,
+          rgba(0, 0, 0, 0.751819396286868) 0%,
+          rgba(0, 0, 0, 0) 100%
   );
 }
 
-.header-container ul li a {
+.header-container ul li a,
+.header-container ul li a i,
+.header-container ul li i {
   color: white;
   font-size: 14px;
 }
@@ -52,17 +49,24 @@ ul {
 
 .left-menu {
   display: flex;
-  flex: 1;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .right-menu {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .main-menu {
   margin-left: 40px;
+}
+
+.menu,
+.left-menu,
+.right-menu {
+  list-style: none;
 }
 
 .profile-img {
