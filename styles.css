@@ -1,31 +1,28 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-::before,
-::after {
-  box-sizing: border-box;
+
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
-  background-image: url("https://images6.alphacoders.com/696/thumb-1920-696647.jpg");
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  min-height: 100%;
 }
 
-/* ჰედერი */
+ul {
+  margin: 0;
+  padding: 0;
+}
 
-.header-container {
+header {
+  position: absolute;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
   height: 70px;
   padding: 0 3%;
   background: rgb(0, 0, 0);
@@ -36,37 +33,23 @@ body {
   );
 }
 
-.header-container ul li a,
-.header-container ul li a i,
-.header-container ul li i {
+header ul li a {
   color: white;
   font-size: 14px;
 }
 
-.header-container ul li {
+header ul li {
   padding: 10px;
 }
 
-.left-menu {
+.menu {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
 }
 
-.right-menu {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.main-menu {
+.menu.left {
+  flex: 1;
   margin-left: 40px;
-}
-
-.menu,
-.left-menu,
-.right-menu {
-  list-style: none;
 }
 
 .profile-img {
@@ -75,7 +58,7 @@ body {
   align-items: center;
 }
 
-.header-container li img {
+header li img {
   border-radius: 5px;
   height: 34px;
   width: 34px;
@@ -85,41 +68,35 @@ body {
   margin-left: 10px;
 }
 
-.header-container li {
+header li {
   display: inline-block;
   padding: 0 20px;
 }
 
-.header-container a {
+header a {
   text-decoration: none;
   transition: all 0.3s ease 0s;
 }
 
-.header-container a:hover {
-  color: rgb(218, 218, 218);
-}
-
-.header-container i {
-  transition: all 0.3s ease 0s;
-}
-
-.header-container i:hover {
+header a:hover {
   color: rgb(218, 218, 218);
 }
 
 .profile-menu {
-  flex-direction: column;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: flex-start;
   position: absolute;
-  display: block;
-  right: 50px;
+  right: 0;
   top: 70px;
   border-radius: 5px;
   width: 200px;
-  height: auto;
   background: #23252b;
+  opacity: 0;
+}
+
+.profile {
+  position: relative;
+}
+
+.profile:hover .profile-menu {
   opacity: 1;
 }
 
@@ -149,18 +126,27 @@ body {
   text-decoration: underline;
 }
 
-/* ფილმის შესახებ */
+
+.film {
+  background-image: url("https://images6.alphacoders.com/696/thumb-1920-696647.jpg");
+  min-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 100%;
+  display: flex;
+  padding: 0 3%;
+}
+
 
 .about-film {
-  height: auto;
-  width: auto;
-  left: 60px;
-  top: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  position: absolute;
+  width: 40%;
+  color: white;
 }
 
 .film-logo img {
@@ -173,7 +159,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .about-film .n-logo img {
@@ -182,42 +168,32 @@ body {
 
 .about-film .n-logo h2 {
   text-transform: uppercase;
-  color: white;
   padding-left: 20px;
   font-weight: 400;
 }
 
-.about-film p {
-  color: white;
+.about-film .description {
   font-size: 16px;
-  width: 460px;
   padding-bottom: 20px;
 }
 
 .about-film .buttons button {
   background-color: white;
-  height: 55px;
-  width: 150px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-right: 25px;
+  padding: 15px 25px;
+  font-size: 20px;
+  color: black;
 }
 
 .about-film .buttons button:hover {
   background-color: rgb(211, 211, 211);
 }
 
-.about-film .buttons button i {
-  color: black;
-}
-
-.about-film .buttons button a {
-  padding-left: 15px;
-  font-size: 16px;
-}
-
 .about-film .buttons .info-button {
   width: 190px;
+  color: white;
   background-color: rgba(228, 228, 228, 0.541);
 }
